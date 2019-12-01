@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class MainInv : MonoBehaviour
 {
     public bool showInv;
+    public GameObject mainInv;
+    public GameObject player;
     public Item selectedItem;
     public Transform dropLocation;
     public List<Item> inv = new List<Item>();
@@ -26,24 +28,52 @@ public class MainInv : MonoBehaviour
     public RectTransform content;
     public GameObject itemButton;
 
+    [Header("UI")]
+    public Image itemIcon;
+    public Text itemName;
+    public Text itemDesc;
+
     public void Start()
     {
-        content.sizeDelta = new Vector2(2, 1);
+        content.sizeDelta = new Vector2(2, 20);
         Time.timeScale = 0;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+        mainInv.SetActive(false);
+        player.SetActive(false);
     }
 
     public void Update()
     {
-        content.sizeDelta = new Vector2(2, 1 * inv.Count);
+        content.sizeDelta = new Vector2(2, 20 * inv.Count);
 
-        if (Input.GetKey(KeyCode.I))
+        if (showInv == false && Input.GetKeyDown(KeyCode.Alpha1))
         {
-            inv.Add(ItemData.CreateItem(0));
+            showInv = true;
+            mainInv.SetActive(true);
+            player.SetActive(true);
+        }
+        else if (showInv == true && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            showInv = false;
+            mainInv.SetActive(false);
+            player.SetActive(false);
+        }
+
+        if (showInv == true && Input.GetKeyDown(KeyCode.I))
+        {
+            inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
             GameObject clone = Instantiate(itemButton, content);
             clone.name = inv[inv.Count - 1].Name;
             clone.GetComponentInChildren<Text>().text = inv[inv.Count - 1].Name;
+
         }
+    }
+
+    public void DisplayInfo()
+    {
+        itemIcon = inv[inv.Count - 1].Icon;
+        itemName.text = inv[inv.Count - 1].Name;
+        itemDesc.text = inv[inv.Count - 1].Description;
     }
 }

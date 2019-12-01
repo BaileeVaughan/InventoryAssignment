@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Item
 {
     private int _id;
-    private int _amount;
     private string _name;
     private string _description;
 
-    private Texture2D _icon;
+    private Image _icon;
     private GameObject _mesh;
     private ItemType _type;
 
@@ -17,11 +17,6 @@ public class Item
     {
         get { return _id; }
         set { _id = value; }
-    }
-    public int Amount
-    {
-        get { return _amount; }
-        set { _amount = value; }
     }
     public string Name
     {
@@ -33,7 +28,7 @@ public class Item
         get { return _description; }
         set { _description = value; }
     }
-    public Texture2D Icon
+    public Image Icon
     {
         get { return _icon; }
         set { _icon = value; }
