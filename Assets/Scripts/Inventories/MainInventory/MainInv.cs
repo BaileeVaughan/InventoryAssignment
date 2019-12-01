@@ -63,15 +63,15 @@ public class MainInv : MonoBehaviour
         if (showInv == true && Input.GetKeyDown(KeyCode.I))
         {
             inv.Add(ItemData.CreateItem(Random.Range(0, 3)));
+            itemButton.GetComponent<Button>().onClick.AddListener(DisplayInfo);
             GameObject clone = Instantiate(itemButton, content);
             clone.name = inv[inv.Count - 1].Name;
             clone.GetComponentInChildren<Text>().text = inv[inv.Count - 1].Name;
-
         }
     }
 
     public void DisplayInfo()
-    {
+    {       
         itemIcon = inv[inv.Count - 1].Icon;
         itemName.text = inv[inv.Count - 1].Name;
         itemDesc.text = inv[inv.Count - 1].Description;
