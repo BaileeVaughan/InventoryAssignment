@@ -24,8 +24,8 @@ public static class ItemData
                 _name = "Epic Shades";
                 _description = "Shades once worn by the most epic dude. If worn by a non-epic, death is instant. Grants worthy wearers +420 future sight";
                 _type = ItemType.Glasses;
-                _icon = "Face/EpicGlasses";
-                _mesh = "Face/EpicGlasses";
+                _icon = "Face/EpicShades";
+                _mesh = "Face/EpicShades";
                 break;
             case 2:
                 _name = "Epic Glove";
@@ -48,7 +48,7 @@ public static class ItemData
             ID = itemID,
             Name = _name,
             Description = _description,
-            Icon = Resources.Load("Icons/" + _icon) as Image,
+            Icon = Resources.Load("Icons/" + _icon) as Texture2D,
             ItemMesh = Resources.Load("Mesh/" + _mesh) as GameObject,
             Type = _type
         };

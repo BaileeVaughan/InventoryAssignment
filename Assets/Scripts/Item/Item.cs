@@ -9,7 +9,7 @@ public class Item
     private string _name;
     private string _description;
 
-    private Image _icon;
+    private Texture2D _icon;
     private GameObject _mesh;
     private ItemType _type;
 
@@ -28,7 +28,7 @@ public class Item
         get { return _description; }
         set { _description = value; }
     }
-    public Image Icon
+    public Texture2D Icon
     {
         get { return _icon; }
         set { _icon = value; }
