@@ -20,7 +20,7 @@ public class MainInv : MonoBehaviour
         public GameObject curItem;
     }
 
-    public static equiptment[] equiptmentSlots;
+    public static equiptment[] equiptmentSlots = new equiptment[3];
 
     public ScrollRect view;
     public RectTransform content;
@@ -38,6 +38,9 @@ public class MainInv : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         mainInv.SetActive(false);
+        equiptmentSlots[0].location = GameObject.FindGameObjectWithTag("Head").GetComponent<Transform>();
+        equiptmentSlots[1].location = GameObject.FindGameObjectWithTag("Face").GetComponent<Transform>();
+        equiptmentSlots[2].location = GameObject.FindGameObjectWithTag("Hand").GetComponent<Transform>();
     }
 
     public void Update()
@@ -64,5 +67,4 @@ public class MainInv : MonoBehaviour
             clone.GetComponentInChildren<Text>().text = inv[inv.Count - 1].Name;
         }
     }
-
 }

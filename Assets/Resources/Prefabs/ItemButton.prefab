@@ -207,6 +207,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7904569723980071080}
+        m_MethodName: DisplayMesh
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &7904569723980071080
@@ -221,6 +232,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3fb2fe552b9d14084d22a0d7143c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonName: {fileID: 0}
   itemIcon: {fileID: 0}
   itemName: {fileID: 0}
   itemDesc: {fileID: 0}
+  elementIndex: 0
+  bodyPart: {fileID: 0}

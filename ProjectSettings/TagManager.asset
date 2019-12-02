@@ -7,6 +7,9 @@ TagManager:
   - Icon
   - ItemName
   - ItemDescription
+  - Head
+  - Face
+  - Hand
   layers:
   - Default
   - TransparentFX

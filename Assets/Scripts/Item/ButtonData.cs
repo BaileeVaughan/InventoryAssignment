@@ -11,7 +11,7 @@ public class ButtonData : MonoBehaviour
     public Text itemDesc;
     public int elementIndex;
 
-    public GameObject bodyPart;
+    public Transform bodyPart;
 
     public void Update()
     {
@@ -31,7 +31,8 @@ public class ButtonData : MonoBehaviour
 
     public void DisplayMesh()
     {
-        
+        bodyPart = MainInv.equiptmentSlots[MainInv.inv[elementIndex].SlotIndex].location.transform;
+
         Instantiate(MainInv.inv[elementIndex].ItemMesh).transform.position = bodyPart.transform.position;
     }
 }

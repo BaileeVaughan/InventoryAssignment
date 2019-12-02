@@ -9,6 +9,7 @@ public static class ItemData
         string _description = "";
         string _icon = "";
         string _mesh = "";
+        int _slotIndex = 0;
         ItemType _type = ItemType.Hat;
 
         switch (itemID)
@@ -19,6 +20,7 @@ public static class ItemData
                 _type = ItemType.Hat;
                 _icon = "Head/EpicHat";
                 _mesh = "Head/EpicHat";
+                _slotIndex = 0;
                 break;
             case 1:
                 _name = "Epic Shades";
@@ -26,6 +28,8 @@ public static class ItemData
                 _type = ItemType.Glasses;
                 _icon = "Face/EpicShades";
                 _mesh = "Face/EpicShades";
+                _slotIndex = 1;
+
                 break;
             case 2:
                 _name = "Epic Glove";
@@ -33,6 +37,8 @@ public static class ItemData
                 _type = ItemType.Glove;
                 _icon = "Hand/EpicGlove";
                 _mesh = "Hand/EpicGlove";
+                _slotIndex = 2;
+
                 break;
             default:
                 _name = "Epic Hat";
@@ -40,12 +46,15 @@ public static class ItemData
                 _type = ItemType.Hat;
                 _icon = "Head/EpicHat";
                 _mesh = "Head/EpicHat";
+                _slotIndex = 0;
+
                 break;
         }
 
         Item temp = new Item
         {
             ID = itemID,
+            SlotIndex = _slotIndex,
             Name = _name,
             Description = _description,
             Icon = Resources.Load("Icons/" + _icon) as Texture2D,
